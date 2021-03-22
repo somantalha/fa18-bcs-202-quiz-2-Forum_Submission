@@ -31,5 +31,6 @@ $(function () {
     else
     {
         alert("Form is being submitted");
+        error.textContent = " " 
     }
   }

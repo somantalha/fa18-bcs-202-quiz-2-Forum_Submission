@@ -30,7 +30,11 @@ $(function () {
     }
     else
     {
+        error.textContent = "Forum is Submitted successfully!!" 
+        error.style.color = "green"
         alert("Form is being submitted");
-        error.textContent = " " 
+        e. preventDefault();
+        
+         
     }
   }

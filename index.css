@@ -11,3 +11,9 @@ input:invalid:required {
 input:valid {
   border: 2px solid black;
 }
+label {
+  font-weight: bold;
+}
+#submit:hover {
+  background-color: rgb(100, 97, 97);
+}

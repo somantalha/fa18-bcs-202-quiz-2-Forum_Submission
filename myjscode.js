@@ -1,40 +1,40 @@
-
 $(function () {
+    
     $("#myForm").submit(handleFormSubmit);
+    
   });
-  $("#myForm"). submit(function(e) {
-    e. preventDefault();
-    });
- function handleFormSubmit(e) {
-    var name = $("#name").val();
-    var pass1= $("#password").val();
-    var pass2= $("#confirm_password").val();
-    var error = document.getElementById("error") 
-    if(name.length < 5)
-    {
-        error.textContent = "Name should be atleast 5 character long!!" 
-        error.style.color = "red"
-        e. preventDefault();
-    }
-    else if(pass1 != pass2)
-    {
-        error.textContent = "Password should be Same!!" 
-        error.style.color = "red"
-        e. preventDefault();
-    }
-    else if((pass1.length < 8) || (pass2.length < 8) )
-    {
-        error.textContent = "Password should be atleast 8 character long!!" 
-        error.style.color = "red"
-        e. preventDefault();
-    }
-    else
-    {
-        error.textContent = "Forum is Submitted successfully!!" 
-        error.style.color = "green"
-        alert("Form is being submitted");
-        e. preventDefault();
+
+     function onChange() {
+        const password = document.querySelector('input[name=password]');
+        const confirm_password = document.querySelector('input[name=confirm_password]');
+        if (confirm_password.value === password.value) {
+            confirm_password.setCustomValidity('');
+        } else {
+            confirm_password.setCustomValidity('Passwords do not match');
+        }
         
-         
-    }
+      }
+      /*  function check() {
+        if (document.getElementById('password').value ==
+          document.getElementById('confirm_password').value) {
+          document.getElementById('message').style.color = 'green';
+          document.getElementById('message').innerHTML = 'Password Match';
+        } else {
+          document.getElementById('message').style.color = 'red';
+          document.getElementById('message').innerHTML = 'Password not Match';
+        }
+      }*/
+ function handleFormSubmit(e) {
+    
+    var email = document.getElementById("email");
+
+    email.addEventListener("input", function (event) {
+      if (email.validity.typeMismatch) {
+        email.setCustomValidity("Please enter an e-mail address!");
+      } else {
+        email.setCustomValidity("");
+      }
+    });
+    alert("Form is being submitted");
+   
   }
